@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript and CSS Code Beautifier</title>
+
+</head>
+<body>
+
+<main id="main">
+<form id="options">
+	<section>
+		<h3>General</h3>
+		<div class="checkbox">
+			<label><input type="checkbox" id="autoformat" name="autoformat"><span>Automatic formatting</span></label>
+		</div>
+		<div class="selectbox">
+			<select name="theme">
+				<option value="default">Theme - default</option>
+				<option>3024-day</option>
+				<option>3024-night</option>
+				<option>abcdef</option>
+				<option>ambiance</option>
+				<option>base16-dark</option>
+				<option>base16-light</option>
+				<option>bespin</option>
+				<option>blackboard</option>
+				<option>cobalt</option>
+				<option>colorforth</option>
+				<option>dracula</option>
+				<option>eclipse</option>
+				<option>elegant</option>
+				<option>erlang-dark</option>
+				<option>hopscotch</option>
+				<option>icecoder</option>
+				<option>isotope</option>
+				<option>lesser-dark</option>
+				<option>liquibyte</option>
+				<option>material</option>
+				<option>mbo</option>
+				<option>mdn-like</option>
+				<option>midnight</option>
+				<option>monokai</option>
+				<option>neat</option>
+				<option>neo</option>
+				<option>night</option>
+				<option>paraiso-dark</option>
+				<option>paraiso-light</option>
+				<option>pastel-on-dark</option>
+				<option>railscasts</option>
+				<option>rubyblue</option>
+				<option>seti</option>
+				<option>solarized dark</option>
+				<option>solarized light</option>
+				<option>the-matrix</option>
+				<option>tomorrow-night-bright</option>
+				<option>tomorrow-night-eighties</option>
+				<option>ttcn</option>
+				<option>twilight</option>
+				<option>vibrant-ink</option>
+				<option>xq-dark</option>
+				<option>xq-light</option>
+				<option>yeti</option>
+				<option>zenburn</option>
+			</select>
+		</div>
+		<div class="selectbox">
+			<select name="font">
+				<option value="default">Font - default</option>
+				<option>Andale Mono</option>
+				<option>Anonymous Pro</option>
+				<option>Bitstream Vera Sans Mono</option>
+				<option>Consolas</option>
+				<option>Courier New</option>
+				<option>Droid Sans Mono</option>
+				<option>Dejavu Sans Mono</option>
+				<option>Hack</option>
+				<option>Inconsolata</option>
+				<option>Lucida Console</option>
+				<option>Monaco</option>
+				<option>Menlo</option>
+				<option>PT Mono</option>
+				<option>Source Code Pro</option>
+				<option>Ubuntu Mono</option>
+			</select>
+		</div>
+		<div class="selectbox">
+			<select name="indent_size">
+				<option value="1">Indent with a tab character</option>
+				<option value="2">Indent with 2 spaces</option>
+				<option value="3">Indent with 3 spaces</option>
+				<option value="4">Indent with 4 spaces</option>
+				<option value="8">Indent with 8 spaces</option>
+			</select>
+		</div>
+	</section>
+
+	<section>
+		<h3>JavaScript</h3>
+		<div class="selectbox">
+			<select name="max_preserve_newlines">
+                <option value="-1">Remove all extra newlines</option>
+                <option value="1">Allow 1 newline between tokens</option>
+                <option value="2">Allow 2 newlines between tokens</option>
+                <option value="5">Allow 5 newlines between tokens</option>
+                <option value="10">Allow 10 newlines between tokens</option>
+                <option value="0">Allow unlimited newlines between tokens</option>
+            </select>
+		</div>
+		<div class="selectbox">
+			<select name="wrap_line_length">
+                <option value="0">Do not wrap lines</option>
+                <option value="40">Wrap lines near 40 characters</option>
+                <option value="70">Wrap lines near 70 characters</option>
+                <option value="80">Wrap lines near 80 characters</option>
+                <option value="110">Wrap lines near 110 characters</option>
+                <option value="120">Wrap lines near 120 characters</option>
+                <option value="160">Wrap lines near 160 characters</option>
+            </select>
+		</div>
+		<div class="selectbox">
+			<select name="brace_style">
+                <option value="collapse">Braces with control statement</option>
+                <option value="collapse-preserve-inline">Braces inline or with control statement</option>
+                <option value="expand">Braces on own line</option>
+                <option value="end-expand">End braces on own line</option>
+                <option value="none">Attempt to keep braces where they are</option>
+            </select>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="e4x"> <span>Support e4x/jsx syntax</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="comma_first"> <span>Use comma_first list style?</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="detect_packers"> <span>Detect packers and obfuscators?</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="keep_array_indentation"> <span>Keep array indentation?</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="break_chained_methods"> <span>Break lines on chained methods?</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="space_before_conditional"> <span>Space before conditional: "if(x)" / "if (x)"</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="unescape_strings"> <span>Unescape printable chars encoded as \xNN or \uNNNN?</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="jslint_happy"> <span>Use JSLint-happy formatting tweaks?</span></label>
+		</div>
+	</section>
+
+	<section>
+		<h3>CSS</h3>
+		<div class="checkbox">
+			<label><input type="checkbox" name="selector_separator_newline"> <span>Separate selectors with newline or not?</span></label>
+		</div>
+		<div class="checkbox">
+            <label><input type="checkbox" name="newline_between_rules"> <span>Add a new line after every css rule?</span></label>
+		</div>
+	</section>
+</form>
+</main>
+
+<section id="preview" class="CodeBeautifier">
+<textarea id="sample-js">
+// This is just a sample script.
+var foo = "bar" || true;
+function baz(arg) {
+  if ("this_is"==/an_example/i){of_beautifer();}else{this.a=b?(c%2):d[e];};
+  return Math.PI;
+};
+</textarea>
+<textarea id="sample-css">
+#foo,
+.bar { width: 50%; }
+span[class^=icon-]:after { font-family: "IconFont" !important; }
+@media only screen 
+and (max-width: 24em) {
+/* STYLES GO HERE */
+}
+</textarea>
+</section>
+
+<script src="utils.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

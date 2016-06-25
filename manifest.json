@@ -1,0 +1,36 @@
+{
+  	"manifest_version":2,
+  	"name":"content_security_policy",
+  	"description":"content_security_policy",
+  	"version":"1.0",
+    "icons":{
+      "16":"images/appicon.jpg",
+      "32":"images/appicon.jpg",
+      "64":"images/appicon.jpg",
+      "128":"images/appicon.jpg"
+    },
+  	"browser_action":{
+    	"default_icon":"images/appicon.jpg",
+    	"default_title":"content_security_policy",
+    	"default_popup":"page/popup.html"
+  	},
+    "options_page": "page/options.html",
+    "options_ui" : {
+      "page" : "page/options.html" ,
+      "chrome_style" : true
+    },
+    "content_scripts": [ {
+      "matches": [ "http://*/*", "https://*/*", "file:///*/*" ],
+      "js": [ "js/lib/jquery.min.js", "js/console.js"],
+      "css":[
+        "css/context.css"
+      ]
+    }],
+    "background": {
+      "scripts": [ "js/background.js","js/init.js" ]
+      //"page": "page/options.html"
+    },
+    "permissions": [ "contextMenus", "tabs" , "notifications"], //获得权限
+  "content_security_policy" : "script-src 'self' 'unsafe-eval' https://www.baidu.com; object-src 'self'" //获取跨域请求数据
+
+}

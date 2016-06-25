@@ -1,0 +1,210 @@
+.movejs_content{ background:#fff;  box-sizing:border-box;padding:0 20px; }
+.movejs_content input{ padding:5px; border:1px solid #ddd; width:50px; font-size:13px; font-weight:bold;}
+.movejs_content .movejs_warp_box{ padding:2px 0;  position:relative;text-align:center;   margin:0 auto;}
+.movejs_content .movejs_warp_box .movejs_btn{ text-shadow: 1px 1px 1px #666666;   margin:2px; background:#d33;   color:#fff; text-align:center; padding:5px;display:block; font-size:12px; border-radius:5px; text-decoration:none; box-shadow:0 0 5px #d09;}
+.movejs_content .movejs_warp_box .movejs_btn:hover{ background:#f60;}
+.movejs_content .movejs_warp_box p{color:#f78;font-size:11px;    font-family:微软雅黑;letter-spacing:-1px; }
+.movejs_content .movejs_warp_box p span{ margin-right:3px; background:#c38; color:#fff;  padding:0 10px; text-align:center;}
+.movejs_content .movejs_silde { left:0; bottom:0; position:absolute; transform: rotate(45deg); display:block; width:20px; height:20px; border-top:2px solid #ccc; border-left:2px solid #ccc; background:transparent;}
+
+.customeCheckBox{
+    width: 25px;
+    position: relative;
+    margin:25px 20px 18px 20px;
+    display:inline-block;
+}
+.customeCheckBox label{
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:solid 1px #AEAEAE;
+    border-radius :5px;
+}
+.customeCheckBox label::after{
+    opacity: 0.1;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 4px;
+    left: 4px;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.customeCheckBox input[type=checkbox]:checked + label::after {
+    border: 3px solid #F96052;
+    border-top: none;
+    border-right: none;
+    opacity: 1;
+}
+.customeCheckBox input[type=checkbox]:checked + label{
+    border: 1px solid #F96052;
+}
+
+.imgs{
+    width:360px;
+}
+body{
+    min-width: 460px;
+    font-family: 微软雅黑;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+*{ padding:0; margin:0; list-style: none;text-decoration: none;}
+.article_list li {
+    overflow: hidden;
+    margin:5px 0;
+    padding:5px;
+}
+.article_list li a{
+    color:#444;
+}
+.article_list li:active,.article_list li:hover  {
+    background: #eee;
+}
+
+.article_list li img{
+        height: 100px;
+    width: 126px;
+    float: left;
+}
+.article_list li .infos{
+    margin-left:136px;
+}
+.article_list li .infos p{
+
+    font-size: 16px;
+}
+
+.article_list li .author{
+    color:#0095ea;
+     font-size: 12px;
+}
+
+
+.hide{
+    display: none;
+}
+.tab-component{ 
+    overflow-x: hidden;
+}
+.menu-box{
+    overflow: hidden;
+     margin-bottom: 15px;
+}
+.tab-component .menu-box ul li{
+    display: inline-block;
+    float: left;
+    width: 33.33%;
+    line-height: 40px;
+    height: 40px;
+    text-align: center; 
+    font-size: 15px;
+}
+.tab-component .menu-box ul li a{ 
+    color:#666;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tab-component .menu-box ul li.active{
+    background: #eee; 
+}
+.tab-component .box{
+    padding:5px;
+}
+.tab-component .box .price{
+    color:#FA5D50;
+    font-size: 15px;
+}
+.more {
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center; 
+}
+.more:active{
+    background: #eee;
+}
+.more a{
+     color:#999;
+}
+
+.tab-component input[type='text']{ padding:5px; border:1px solid #ddd; width: 83%;   font-size:13px; font-weight:bold;}
+
+.mjs_btn{ text-shadow: 1px 1px 1px #666666;   margin:2px; background:#d33;   color:#fff; text-align:center; padding:5px 18px;font-size:12px; border-radius:5px; text-decoration:none; box-shadow:0 0 5px #d09;} 
+
+
+
+.loading_body .loading_box{
+    display: block;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250,250,250,.95);
+    text-align: center;
+}
+.loading_body .loading_box img{
+       position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.loading_box{
+    display: none;
+}
+
+
+
+
+
+
+/******************************************************/
+    /***************************\     
+    *                              *        
+    *    =,    (\_/)    ,=      *
+    *     /`-'--(")--'-'\        *    
+    *    /     (___)     \        *    
+    *   /.-.-./ " " \.-.-.\         *
+    *   email:move11@126.com    *
+    \***************************/
+.item {
+    border-bottom: 1px solid #f1f2f2;
+    line-height: 45px;
+    padding:0 5px;
+}
+.item a{
+    color: #999;
+}
+
+.item a.btn-player{
+    display: inline-block;
+    background: #eee;
+    width: 25px;
+    height: 25px;
+    border-radius:50%;
+    margin-top: 8px;
+}
+.ellipsis {
+    width: 95%;    display: inline;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+    word-wrap: normal;
+}
