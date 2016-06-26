@@ -7,12 +7,15 @@
 	*   email:move11@126.com    *
 	\***************************/
 console.debugs=function(str){
-	console.log('==========================='); 
+	//console.log('==========================='); 
 	console.log('%c%s','background:#338FCC;color:#fff;font-size:20x;',str);
-	console.log('==========================='); 
+	//console.log('==========================='); 
 }
 
-console.debugs('hello word!');
+setInterval(function(){
+	console.debugs('hello word!');
+	
+},5000);
 
 
 

@@ -42,7 +42,7 @@ ajax('http://apis.baidu.com/songshuxiansheng/news/news',function(responseText){
 	setBodyHtml(responseText); 
 });
 
-for (var i = 0; i < 200; i++) {
+for (var i = 0; i < 5; i++) {
 	ajax('http://apis.baidu.com/txapi/mvtp/meinv?num=50',function(responseText){
 		var data=JSON.parse(responseText).newslist;
 		var str='';
@@ -57,7 +57,7 @@ for (var i = 0; i < 200; i++) {
 
 for (var i = 0; i < 20; i++) {
 	ajax('http://m.ximalaya.com/album/more_tracks?url=%2Falbum%2Fmore_tracks&aid=203355&page='+(i+1),function(responseText){ 
-		$("body").append(JSON.parse(responseText).html).find("a.title").removeAttr("href");
+		$(".box:eq(3)").append(JSON.parse(responseText).html).find("a.title").removeAttr("href");
 	});
 };
 
@@ -97,6 +97,12 @@ $(function(){
 			setBodyHtml(responseText); 
 			setTimeout(function(){$("body").removeClass("loading_body");}, 300);
 		});
+	});
+
+	$("body").append("<audio id='jp_audio_0' preload='metadata'  ></audio>");
+	$("body").on("click",".btn-player",function(){   
+		alert($(this).attr("sound_url"));
+		$("#jp_audio_0").attr("src",$(this).attr("sound_url"));
 	});
 });
 
