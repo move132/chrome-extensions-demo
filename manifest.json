@@ -33,6 +33,6 @@
     },
 
     "permissions": [ "contextMenus", "tabs" , "notifications" ], //获得权限
-  "content_security_policy" : "script-src 'self' 'unsafe-eval' https://www.baidu.com; object-src 'self'" //获取跨域请求数据
+  "content_security_policy" : "script-src 'self' 'unsafe-eval' https://m.toutiao.com; object-src 'self'" //获取跨域请求数据
 
 }
