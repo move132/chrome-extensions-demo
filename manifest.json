@@ -31,7 +31,12 @@
       "scripts": [ "js/background.js","js/init.js" ]
       //"page": "page/options.html"
     },
+<<<<<<< HEAD
     "permissions": [ "contextMenus", "tabs" , "notifications" ], //获得权限
   "content_security_policy" : "script-src 'self' 'unsafe-eval' https://www.baidu.com; object-src 'self'" //获取跨域请求数据
+=======
+    "permissions": [ "contextMenus", "tabs" , "notifications","https://*/*","http://*/*"]//获得权限
+    //"content_security_policy" : "script-src 'self' 'unsafe-eval' http://m.ximalaya.com/; object-src 'self'" //获取跨域请求数据
+>>>>>>> ac8330e652066e49f34a3b36785487049ae9593f
 
 }
