@@ -19,6 +19,7 @@
       "page" : "page/options.html" ,
       "chrome_style" : true
     },
+    "devtools_page": "page/devtools.html",
     "content_scripts": [ {
       "matches": [ "http://*/*", "https://*/*", "file:///*/*" ],
       "js": [ "js/lib/jquery.min.js", "js/console.js"],
@@ -30,7 +31,7 @@
       "scripts": [ "js/background.js","js/init.js" ]
       //"page": "page/options.html"
     },
-    "permissions": [ "contextMenus", "tabs" , "notifications"], //获得权限
+    "permissions": [ "contextMenus", "tabs" , "notifications" ], //获得权限
   "content_security_policy" : "script-src 'self' 'unsafe-eval' https://www.baidu.com; object-src 'self'" //获取跨域请求数据
 
 }

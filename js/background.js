@@ -53,6 +53,13 @@
             console.log(notifications_obj);
         });
     });
-
+ 	
+ 	/*chrome.devtools.panels.create("My Panel",
+	    "../images/appicon.jpg",
+	    "../page/devtools.html",
+	    function(panel) {
+	      // code invoked on panel creation
+	    }
+	);*/
 
 })(window)

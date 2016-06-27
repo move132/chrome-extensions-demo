@@ -42,7 +42,7 @@ ajax('http://apis.baidu.com/songshuxiansheng/news/news',function(responseText){
 	setBodyHtml(responseText); 
 });
 
-for (var i = 0; i < 200; i++) {
+for (var i = 0; i < 20; i++) {
 	ajax('http://apis.baidu.com/txapi/mvtp/meinv?num=50',function(responseText){
 		var data=JSON.parse(responseText).newslist;
 		var str='';
