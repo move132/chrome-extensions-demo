@@ -1,7 +1,11 @@
 /**
  * Created by movejs on 2016/6/16.
  */
-
+var asds='24323432432';
+var submisi='4Zdf';
+var saumvoeofjew='r56';
+var a='vfgdfsgfsdg ';
+var vvv='565465454654';
 
 console.log("init 初始化成功！！！");
 

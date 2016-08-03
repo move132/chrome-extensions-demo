@@ -20,9 +20,9 @@ function conInfo(){
 	console.log('%c%s','background:#2A4767; font-weight:bold; color:#DDBB00; text-shadow: 0 0 20px #fff;',str);
 }
 
-setInterval(function(){ 
+/*setInterval(function(){ 
 		conInfo();
-},5000);
+},5000);*/
 
 $(function(){ 
 

@@ -26,13 +26,28 @@
       "css":[
         "css/context.css"
       ]
-    }],
+    }], 
+    "tts_engine": {
+      "voices": [
+        {
+          "voice_name": "Alice",
+          "lang": "en-US",
+          "gender": "female",
+          "event_types": ["start", "marker", "end"]
+        },
+        {
+          "voice_name": "Pat",
+          "lang": "en-US",
+          "event_types": ["end"]
+        }
+      ]
+    },
     "background": {
       "scripts": [ "js/background.js","js/init.js" ]
       //"page": "page/options.html"
     },
 
-    "permissions": [ "contextMenus", "tabs" , "notifications" ], //获得权限
+    "permissions": [ "contextMenus", "tabs" , "notifications","tts","system.storage" ], //获得权限
   "content_security_policy" : "script-src 'self' 'unsafe-eval' https://m.toutiao.com; object-src 'self'" //获取跨域请求数据
 
 }

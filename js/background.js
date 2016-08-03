@@ -54,6 +54,7 @@
         });
     });
  	
+ 	
  	/*chrome.devtools.panels.create("My Panel",
 	    "../images/appicon.jpg",
 	    "../page/devtools.html",
