@@ -1,3 +1,26 @@
+::-webkit-scrollbar  
+{  
+    width: 6px;  
+    height: 6px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #ddd;  
+}
+
 .movejs_content{ background:#fff;  box-sizing:border-box;padding:0 20px; }
 .movejs_content input{ padding:5px; border:1px solid #ddd; width:50px; font-size:13px; font-weight:bold;}
 .movejs_content .movejs_warp_box{ padding:2px 0;  position:relative;text-align:center;   margin:0 auto;}
@@ -6,6 +29,21 @@
 .movejs_content .movejs_warp_box p{color:#f78;font-size:11px;    font-family:微软雅黑;letter-spacing:-1px; }
 .movejs_content .movejs_warp_box p span{ margin-right:3px; background:#c38; color:#fff;  padding:0 10px; text-align:center;}
 .movejs_content .movejs_silde { left:0; bottom:0; position:absolute; transform: rotate(45deg); display:block; width:20px; height:20px; border-top:2px solid #ccc; border-left:2px solid #ccc; background:transparent;}
+
+.icon-player{
+    display: block;
+    width:0;
+    height:0;
+    border-top:4px solid transparent;
+    border-right:4px solid transparent;
+    border-bottom:4px solid transparent;
+    border-left:8px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -2px;
+}
 
 .customeCheckBox{
     width: 25px;
@@ -124,7 +162,7 @@ body{
     background: #eee; 
 }
 .tab-component .box{
-    padding:5px;
+   /*  padding:5px; */
 }
 .tab-component .box .price{
     color:#FA5D50;
@@ -184,32 +222,40 @@ body{
     \***************************/
 .item {
     border-bottom: 1px solid #f1f2f2; 
-    padding:10px 5px;
+    padding:10px 15px;
     overflow: hidden;
+    cursor:pointer;
     transition: all .6s;
 }
 .item:hover{
-    background: #F9988E;
-    color:#fff;
+    background: #eee;
+    color:#F9988E;   
 }
 .item:hover a{
-    color: #fff;
+    color:#F9988E;
 
 }
 
 .item a{
     height: 20px; 
     color: #666;  
-    transition: all .6s;
+    transition: all .6s; 
 }
 
 .item a.btn-player{
     display: inline-block;
-    background: #b32111;
+    background: #999;
     width: 20px;
     height: 20px;
-    border-radius:50%; 
+    border-radius:50%;  
+    position: relative;  transform-style: preserve-3d;
+    transition: all .6s;
 }
+.item a.btn-player:hover{
+    box-shadow: 0 0 5px #F9988E;
+    transform:rotateY(360deg);
+}
+
 .item a.btn-player.play{
     background: orange;
 }

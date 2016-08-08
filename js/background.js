@@ -23,7 +23,7 @@
 
 	//监听右键菜单，一旦被点击，则通知前台
 	chrome.contextMenus.onClicked.addListener(function (object,tab,aa) {
-		chrome.extension.getBackgroundPage().createWindow();
+		
 
 		var arr=["page", "frame", "selection", "link", "editable", "image", "video", "audio"];
 		// Send a message to the active tab
@@ -40,6 +40,10 @@
 				});
 			}
 		});
+		
+		chrome.extension.getBackgroundPage().createTab();
+		chrome.extension.getBackgroundPage().inter();
+		chrome.extension.getBackgroundPage().createWindow();
 	});
 
 

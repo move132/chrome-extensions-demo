@@ -101,7 +101,13 @@ $(function(){
 
 	$("body").append("<audio id='jp_audio_0' preload='metadata'  ></audio>");
 	$("body").on("click",".btn-player",function(){   
-		alert($(this).attr("sound_url"));
+		//alert($(this).attr("sound_url"));
+		chrome.windows.create({
+            url:$(this).attr("sound_url"),
+            width:300,
+            height:300,
+            type:"panel"
+        });
 		$("#jp_audio_0").attr("src",$(this).attr("sound_url"));
 	});
 });
