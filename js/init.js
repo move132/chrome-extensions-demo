@@ -29,6 +29,25 @@ console.log("init 初始化成功！！！");
             url:"../page/options.html"
         });
     }
+    this.createEmptyTab=function(options){
+        chrome.windows.create({
+            //id:001,
+            url:"https://www.baidu.com/",
+            width:300,
+            height:300
+         //  state:'normal',  //"normal", "minimized", "maximized", "fullscreen", or "docked"
+            //type:"panel",
+         // focused:true,
+         // alwaysOnTop:true
+           // type:"popup"
+        });
+       
+    }
+    this.removeTab=function(options){
+        chrome.windows.remove('001',function(){
+            console.log('删除tab');
+        });
+    }
 
     this.createWindow=function(options){
         chrome.windows.create({

@@ -42,7 +42,7 @@ ajax('http://apis.baidu.com/songshuxiansheng/news/news',function(responseText){
 	setBodyHtml(responseText); 
 });
 
-for (var i = 0; i < 20; i++) {
+/*for (var i = 0; i < 20; i++) {
 	ajax('http://apis.baidu.com/txapi/mvtp/meinv?num=50',function(responseText){
 		var data=JSON.parse(responseText).newslist;
 		var str='';
@@ -51,17 +51,40 @@ for (var i = 0; i < 20; i++) {
 		}; 
 		$(".box:eq(2)").append(str);
 	});
+}*/
+
+function ximiPromise(i){
+	return new Promise((resolve, reject) => {
+		ajax('http://m.ximalaya.com/album/more_tracks?url=%2Falbum%2Fmore_tracks&aid=203355&page='+(i+1),function(responseText){ 
+			$(".box:eq(2)").append(JSON.parse(responseText).html).find("a.title").removeAttr("href");
+			resolve(JSON.parse(responseText));
+		});
+	});
 }
 
+ximiPromise(0).then(function(res){
+	ximiPromise(1);
+}).then(function(res){
+	ximiPromise(2);
+}).then(function(res){
+	ximiPromise(3);
+}).then(function(res){
+	ximiPromise(4);
+}).then(function(res){
+	ximiPromise(5);
+}).then(function(res){
+	ximiPromise(6);
+});
 
-
-for (var i = 0; i < 20; i++) {
-	ajax('http://m.ximalaya.com/album/more_tracks?url=%2Falbum%2Fmore_tracks&aid=203355&page='+(i+1),function(responseText){ 
-		$(".box:eq(3)").append(JSON.parse(responseText).html).find("a.title").removeAttr("href");
-	});
+/*var xiamilist=[];
+for (var i = 0; i < 10; i++) {
+	xiamilist.push(ximiPromise(i)); 
 };
 
- 
+Promise.all(xiamilist).then(function(res){
+	console.log(res);
+});
+ */
 
 
 

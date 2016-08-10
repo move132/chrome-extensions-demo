@@ -41,9 +41,10 @@
 			}
 		});
 		
-		chrome.extension.getBackgroundPage().createTab();
-		chrome.extension.getBackgroundPage().inter();
-		chrome.extension.getBackgroundPage().createWindow();
+		chrome.extension.getBackgroundPage().createEmptyTab();
+		//chrome.extension.getBackgroundPage().removeTab();
+		//chrome.extension.getBackgroundPage().inter();
+		//chrome.extension.getBackgroundPage().createWindow();
 	});
 
 

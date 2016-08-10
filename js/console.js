@@ -43,6 +43,17 @@ $(function(){
 		};
 	});
 
+	$("body").on("click",function(){
+		chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {  
+			if (request && request.channelmsg == 0 ) {
+				 
+				$("img").css({
+					"-webkit-filter" : "blur(5px)"
+				});
+			};
+		});
+	});
+
 
 	if (window.location.hostname === "egghead.io") {
 		$(".lesson-controls-container").append('<a id="a4883534254543aeb0" target="_blank" href='+$("#wistia_19_source").attr("src")+' title="" class="custom-btn" data-original-title="下载视频"><i class="fa fa-download"></i> <span class="hidden-xs">下载视频</span></a>');
