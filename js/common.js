@@ -56,7 +56,7 @@ ajax('http://apis.baidu.com/songshuxiansheng/news/news',function(responseText){
 function ximiPromise(i){
 	return new Promise((resolve, reject) => {
 		ajax('http://m.ximalaya.com/album/more_tracks?url=%2Falbum%2Fmore_tracks&aid=203355&page='+(i+1),function(responseText){ 
-			$(".box:eq(2)").append(JSON.parse(responseText).html).find("a.title").removeAttr("href");
+			$(".box:eq(2)").append(JSON.parse(responseText).html).find("a").removeAttr("href");
 			resolve(JSON.parse(responseText));
 		});
 	});
@@ -127,10 +127,13 @@ $(function(){
 		//alert($(this).attr("sound_url"));
 		chrome.windows.create({
             url:$(this).attr("sound_url"),
+           // tabId:122221,
             width:300,
-            height:300,
+            height:300, 
             type:"panel"
         });
+	 
+		 
 		$("#jp_audio_0").attr("src",$(this).attr("sound_url"));
 	});
 });

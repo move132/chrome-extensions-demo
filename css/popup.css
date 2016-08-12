@@ -30,7 +30,7 @@
 .movejs_content .movejs_warp_box p span{ margin-right:3px; background:#c38; color:#fff;  padding:0 10px; text-align:center;}
 .movejs_content .movejs_silde { left:0; bottom:0; position:absolute; transform: rotate(45deg); display:block; width:20px; height:20px; border-top:2px solid #ccc; border-left:2px solid #ccc; background:transparent;}
 
-.icon-player{
+.icon-play2{
     display: block;
     width:0;
     height:0;
@@ -220,29 +220,29 @@ body{
     *   /.-.-./ " " \.-.-.\         *
     *   email:move11@126.com    *
     \***************************/
-.item {
+.item-block {
     border-bottom: 1px solid #f1f2f2; 
     padding:10px 15px;
     overflow: hidden;
     cursor:pointer;
     transition: all .6s;
 }
-.item:hover{
+.item-block:hover{
     background: #eee;
     color:#F9988E;   
 }
-.item:hover a{
+.item-block:hover a{
     color:#F9988E;
 
 }
 
-.item a{
+.item-block a{
     height: 20px; 
     color: #666;  
-    transition: all .6s; 
+    transition: all .6s;  display: inline;
 }
 
-.item a.btn-player{
+.item-block a.j-ibtn{
     display: inline-block;
     background: #999;
     width: 20px;
@@ -251,19 +251,21 @@ body{
     position: relative;  transform-style: preserve-3d;
     transition: all .6s;
 }
-.item a.btn-player:hover{
+.item-block a.btn-player{
+    display: inline-block; float: right;
+}
+.item-block a.btn-player:hover{
     box-shadow: 0 0 5px #F9988E;
     transform:rotateY(360deg);
 }
 
-.item a.btn-player.play{
+.item-block a.btn-player.play{
     background: orange;
 }
 
-.ellipsis {
+.elli-s {
     float: left;
-    width: 93%;    
-    display: inline-block;
+    width: 90%;     
     overflow: hidden;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
