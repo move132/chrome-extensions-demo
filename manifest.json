@@ -1,7 +1,7 @@
 {
   	"manifest_version":2,
-  	"name":"content_security_policy",
-  	"description":"content_security_policy",
+  	"name":"movecss_extensions_demo",
+  	"description":"chrome 扩展demo",
   	"version":"1.0",
     "icons":{
       "16":"images/appicon.jpg",
