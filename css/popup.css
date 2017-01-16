@@ -1,24 +1,24 @@
-::-webkit-scrollbar  
-{  
-    width: 6px;  
-    height: 6px;  
-    background-color: #F5F5F5;  
-}  
-  
-/*定义滚动条轨道 内阴影+圆角*/  
-::-webkit-scrollbar-track  
-{  
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
-    border-radius: 10px;  
-    background-color: #F5F5F5;  
-}  
-  
-/*定义滑块 内阴影+圆角*/  
-::-webkit-scrollbar-thumb  
-{  
-    border-radius: 10px;  
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
-    background-color: #ddd;  
+::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #ddd;
 }
 
 .movejs_content{ background:#fff;  box-sizing:border-box;padding:0 20px; }
@@ -136,7 +136,7 @@ body{
 .hide{
     display: none;
 }
-.tab-component{ 
+.tab-component{
     overflow-x: hidden;
 }
 .menu-box{
@@ -149,17 +149,17 @@ body{
     width:33.333%;
     line-height: 40px;
     height: 40px;
-    text-align: center; 
+    text-align: center;
     font-size: 15px;
 }
-.tab-component .menu-box ul li a{ 
+.tab-component .menu-box ul li a{
     color:#666;
     font-weight: bold;
     font-size: 15px;
 }
 
 .tab-component .menu-box ul li.active{
-    background: #eee; 
+    background: #eee;
 }
 .tab-component .box{
    /*  padding:5px; */
@@ -171,7 +171,7 @@ body{
 .more {
     line-height: 30px;
     font-size: 14px;
-    text-align: center; 
+    text-align: center;
 }
 .more:active{
     background: #eee;
@@ -182,7 +182,7 @@ body{
 
 .tab-component input[type='text']{ padding:5px; border:1px solid #ddd; width: 83%;   font-size:13px; font-weight:bold;}
 
-.mjs_btn{ text-shadow: 1px 1px 1px #666666;   margin:2px; background:#d33;   color:#fff; text-align:center; padding:5px 18px;font-size:12px; border-radius:5px; text-decoration:none; box-shadow:0 0 5px #d09;} 
+.mjs_btn{ text-shadow: 1px 1px 1px #666666;   margin:2px; background:#d33;   color:#fff; text-align:center; padding:5px 18px;font-size:12px; border-radius:5px; text-decoration:none; box-shadow:0 0 5px #d09;}
 
 
 
@@ -212,16 +212,16 @@ body{
 
 
 /******************************************************/
-    /***************************\     
-    *                              *        
+    /***************************\
+    *                              *
     *    =,    (\_/)    ,=      *
-    *     /`-'--(")--'-'\        *    
-    *    /     (___)     \        *    
+    *     /`-'--(")--'-'\        *
+    *    /     (___)     \        *
     *   /.-.-./ " " \.-.-.\         *
     *   email:move11@126.com    *
     \***************************/
 .item-block {
-    border-bottom: 1px solid #f1f2f2; 
+    border-bottom: 1px solid #f1f2f2;
     padding:10px 15px;
     overflow: hidden;
     cursor:pointer;
@@ -229,7 +229,7 @@ body{
 }
 .item-block:hover{
     background: #eee;
-    color:#F9988E;   
+    color:#F9988E;
 }
 .item-block:hover a{
     color:#F9988E;
@@ -237,8 +237,8 @@ body{
 }
 
 .item-block a{
-    height: 20px; 
-    color: #666;  
+    height: 20px;
+    color: #666;
     transition: all .6s;  display: inline;
 }
 
@@ -247,7 +247,7 @@ body{
     background: #999;
     width: 20px;
     height: 20px;
-    border-radius:50%;  
+    border-radius:50%;
     position: relative;  transform-style: preserve-3d;
     transition: all .6s;
 }
@@ -265,11 +265,19 @@ body{
 
 .elli-s {
     float: left;
-    width: 90%;     
+    width: 90%;
     overflow: hidden;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break: keep-all;
     word-wrap: normal;
+}
+
+
+.list{
+  margin:50px 0 100px 0;
+}
+.list span{
+
 }
