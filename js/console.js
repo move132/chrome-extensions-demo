@@ -93,9 +93,8 @@ QRcode.prototype.init=function(){
 				'.__qrcodeCanvas_box__ .head{ position:absolute; right:5px; top:0px; color:#000; font-size:16px; cursor:pointer;}' +
 				'.__qrcodeCanvas_box__ .__qrcodeCanvas__ {   }' +
 				'.__qrcodeCanvas_box__ .__qrcodeCanvas__ table tr td{ box-shadow: 0 0 10px rgba(236,28,73,0.3); }' +
-			'</style>';
-	$(".___qrcode_wrap").remove(); 
-	$("body").append(html);
+			'</style>'; 
+	$("body").find(".___qrcode_wrap").remove().end().append(html);
 	$('.__qrcodeCanvas__').qrcode({
 		width:"200",
 		height:"200",
