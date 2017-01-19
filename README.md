@@ -1,3 +1,9 @@
 # chrome-extensions-demo
-chrome extensions demo
-rom 
+chrome extensions demo  
+QRcode 
+onMessage
+notifications
+tab
+tts
+
+ 

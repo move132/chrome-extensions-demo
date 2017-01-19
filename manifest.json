@@ -1,53 +1,50 @@
 {
-  	"manifest_version":2,
-  	"name":"movecss_extensions_demo",
-  	"description":"chrome 扩展demo",
-  	"version":"1.0",
-    "icons":{
-      "16":"images/appicon.jpg",
-      "32":"images/appicon.jpg",
-      "64":"images/appicon.jpg",
-      "128":"images/appicon.jpg"
+    "manifest_version": 2,
+    "name": "movecss_extensions_demo",
+    "description": "chrome 扩展demo",
+    "homepage_url" : "https://github.com/move132/chrome-extensions-demo" ,
+    "version": "1.0.1",
+    "icons": {
+        "16": "/images/appicon.jpg",
+        "32": "/images/appicon.jpg",
+        "64": "/images/appicon.jpg",
+        "128": "/images/appicon.jpg"
     },
-  	"browser_action":{
-    	"default_icon":"images/appicon.jpg",
-    	"default_title":"content_security_policy",
-    	"default_popup":"page/popup.html"
-  	},
+    "browser_action": {
+        "default_icon": "/images/appicon.jpg",
+        "default_title": "content_security_policy",
+        "default_popup": "page/popup.html"
+    },
     "options_page": "page/options.html",
-    "options_ui" : {
-      "page" : "page/options1.html" ,
-      "chrome_style" : true
+    "options_ui": {
+        "page": "page/setting.html",
+        "chrome_style": true
     },
     "devtools_page": "page/devtools.html",
-    "content_scripts": [ {
-      "matches": [ "http://*/*", "https://*/*", "file:///*/*" ],
-      "js": [ "js/lib/jquery.min.js", "js/console.js"],
-      "css":[
-        "css/context.css"
-      ]
-    }], 
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*", "file:///*/*"],
+        "js": ["js/lib/jquery.min.js","js/lib/jquery.qrcode.js","js/lib/qrcode.js", "js/console.js"],
+        "css": [
+            "css/context.css"
+        ]
+    }],
     "tts_engine": {
-      "voices": [
-        {
-          "voice_name": "Alice",
-          "lang": "en-US",
-          "gender": "female",
-          "event_types": ["start", "marker", "end"]
-        },
-        {
-          "voice_name": "Pat",
-          "lang": "en-US",
-          "event_types": ["end"]
-        }
-      ]
+        "voices": [{
+            "voice_name": "Alice",
+            "lang": "en-US",
+            "gender": "female",
+            "event_types": ["start", "marker", "end"]
+        }, {
+            "voice_name": "Pat",
+            "lang": "en-US",
+            "event_types": ["end"]
+        }]
     },
     "background": {
-      "scripts": [ "js/background.js","js/init.js" ]
-      //"page": "page/options.html"
+        "scripts": ["js/utils.js", "js/background.js", "js/init.js"]
+            //"page": "page/options.html"
     },
 
-    "permissions": [ "contextMenus", "tabs" , "notifications","tts","system.storage" ], //获得权限
-  "content_security_policy" : "script-src 'self' 'unsafe-eval' https://m.toutiao.com; object-src 'self'" //获取跨域请求数据
-
+    "permissions": ["contextMenus", "tabs", "notifications", "tts","storage", "system.storage"], //获得权限
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://m.toutiao.com; object-src 'self'" //获取跨域请求数据
 }
