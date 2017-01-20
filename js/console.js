@@ -58,7 +58,7 @@ $(function() {
 					new QRcode({ content: request.message.linkUrl });
 				},
 				selection:function(request){
-					new QRcode({ content: request.selectionText  });
+					new QRcode({ content: request.message.selectionText  });
 				}
 			}
 		},
