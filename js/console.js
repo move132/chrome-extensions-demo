@@ -39,7 +39,9 @@ $(function() {
 				case "image":
 					if (request.is_image == "1") {
 						this.menu_type_fn().image(request);
-					};
+					}else{
+						console.log("已经关闭图片模糊设置，请在扩展应用用设置。")
+					}
 				break;
 				case "link":
 					this.menu_type_fn().link(request);
@@ -106,7 +108,7 @@ QRcode.prototype.init=function(){
 }
 QRcode.prototype.bindEvent=function(){
 	var _this=this;
-	console.log( _this.elements );
+	//console.log( _this.elements );
 	_this.elements.find('.head, .__qrcode_bg').on("click", function(e) {
 		_this.remove();
 	});
