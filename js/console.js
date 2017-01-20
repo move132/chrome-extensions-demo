@@ -11,6 +11,12 @@ $(function() {
 
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		//console.log(request, sender,sendResponse);
+		
+		chrome.storage.local.get('is_tts',function(items){
+			 console.log('_____',items);
+			//chrome.tts.speak(msg,ttsoption);
+		})
+
 		if (request && request.message) {
 			switch (request.type) {
 				case "contextMenus":
@@ -37,7 +43,7 @@ $(function() {
 			var menu_type= request.message.menuItemId;  
 			switch( menu_type ){
 				case "image":
-					if (request.is_image == "1") {
+					if (request.localStorage.is_image == "1") {
 						this.menu_type_fn().image(request);
 					}else{
 						console.log("已经关闭图片模糊设置，请在扩展应用用设置。")
@@ -61,6 +67,13 @@ $(function() {
 				},
 				selection:function(request){
 					new QRcode({ content: request.message.selectionText  });
+					if (request.localStorage.is_tts == "1") {
+						alert(22);
+						chrome.tts.speak( request.message.selectionText );
+
+					}else{
+						console.log("已经关闭图片模糊设置，请在扩展应用用设置。")
+					}
 				}
 			}
 		},

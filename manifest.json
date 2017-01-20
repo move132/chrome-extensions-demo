@@ -28,18 +28,21 @@
             "css/context.css"
         ]
     }],
-    "tts_engine": {
-        "voices": [{
-            "voice_name": "Alice",
-            "lang": "en-US",
-            "gender": "female",
-            "event_types": ["start", "marker", "end"]
-        }, {
-            "voice_name": "Pat",
-            "lang": "en-US",
-            "event_types": ["end"]
-        }]
-    },
+    /*"tts_engine": {
+          "voices": [
+            {
+              "voice_name": "Alice",
+              "lang": "en-US",
+              "gender": "female",
+              "event_types": ["start", "marker", "end"]
+            },
+            {
+              "voice_name": "Pat",
+              "lang": "en-US",
+              "event_types": ["end"]
+            }
+          ]
+    },*/
     "background": {
         "scripts": ["js/utils.js", "js/background.js", "js/init.js"]
             //"page": "page/options.html"

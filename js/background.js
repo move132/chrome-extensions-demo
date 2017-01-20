@@ -36,7 +36,8 @@ Utils.log('background.js 初始化成功！！！');
 			var activeTab = tabs[0];
 			chrome.tabs.sendMessage(activeTab.id, {
 				'type': 'contextMenus',
-				'is_image':is_image,
+				//'is_image':is_image,
+				'localStorage':localStorage,
 				"message": object
 			});
 			 
