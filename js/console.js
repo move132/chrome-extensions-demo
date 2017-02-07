@@ -13,7 +13,7 @@ $(function() {
 		//console.log(request, sender,sendResponse);
 		
 		chrome.storage.local.get('is_tts',function(items){
-			 console.log('_____',items);
+			 //console.log('_____',items);
 			//chrome.tts.speak(msg,ttsoption);
 		})
 
@@ -67,11 +67,10 @@ $(function() {
 				},
 				selection:function(request){
 					new QRcode({ content: request.message.selectionText  });
-					if (request.localStorage.is_tts == "1") {
-						chrome.tts.speak( request.message.selectionText );
-
+					if (request.localStorage.is_tts == "1") { 
+						//chrome.tts.speak( request.message.selectionText );
 					}else{
-						console.log("已经关闭图片模糊设置，请在扩展应用用设置。")
+						console.log("已经关闭Tts语音功能，请在扩展应用用设置。")
 					}
 				}
 			}
@@ -97,26 +96,33 @@ QRcode.prototype.init=function(){
 	html  = '<div class="___qrcode_wrap">'+
 				'<div class="__qrcode_bg"></div>' +
 				'<div id="qrcodeCanvas" class="__qrcodeCanvas_box__">' +
-					'<div class="head">x</div>' +
+					'<div class="head">&#215;</div>' +
 					'<div class="__qrcodeCanvas__"></div>' +
 				'</div>' +
 			'</div>'+
 			'<style>' +
 				'.__qrcode_bg{ position:fixed; width:100%; height:100%; background:rgba(0,0,0,0.7);  top:0; left:0; right:0; botttom:0;z-index:999998;}'+
 				'.__qrcodeCanvas_box__{ background:#fff; box-shadow:0 0 100px rgba(255,255,255,0.7); border-radius: 5px; padding:20px; position:fixed; top:50%;left:50%; z-index:999999; transform:translate(-50%,-50%);} ' +
-				'.__qrcodeCanvas_box__ .head{ position:absolute; right:5px; top:0px; color:#000; font-size:16px; cursor:pointer;}' +
+				'.__qrcodeCanvas_box__ .head{ position:absolute; right:5px; top:0px; color:#000; font-size:20px; cursor:pointer;}' +
 				'.__qrcodeCanvas_box__ .__qrcodeCanvas__ {   }' +
 				'.__qrcodeCanvas_box__ .__qrcodeCanvas__ table tr td{ box-shadow: 0 0 10px rgba(236,28,73,0.3); }' +
+				'.__qrcode_error{ color:red;}'+
 			'</style>'; 
 	$("body").find(".___qrcode_wrap").remove().end().append(html);
-	$('.__qrcodeCanvas__').qrcode({
-		width:"200",
-		height:"200",
-		//render: "table",
-		text: _this.options.content
-	});
 	_this.elements= $(".___qrcode_wrap"); 
 	_this.bindEvent();
+	try{
+		$('.__qrcodeCanvas__').qrcode({
+			width:"200",
+			height:"200",
+			//render: "table",
+			text: _this.options.content
+		});
+	}catch(err){
+		console.log('Qrcode '+err);
+		$('.__qrcodeCanvas__').html('<p class="__qrcode_error">'+err+'</p>');
+		return;
+	}
 }
 QRcode.prototype.bindEvent=function(){
 	var _this=this;
