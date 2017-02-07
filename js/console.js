@@ -42,8 +42,8 @@ $(function() {
 			console.log(request);
 			var menu_type= request.message.menuItemId;  
 			switch( menu_type ){
-				case "image":
-					if (request.localStorage.is_image == "1") {
+				case "image": 
+					if (request.localStorage.is_image_blur == "1") {
 						this.menu_type_fn().image(request);
 					}else{
 						console.log("已经关闭图片模糊设置，请在扩展应用用设置。")
