@@ -68,7 +68,6 @@ $(function() {
 				selection:function(request){
 					new QRcode({ content: request.message.selectionText  });
 					if (request.localStorage.is_tts == "1") {
-						alert(22);
 						chrome.tts.speak( request.message.selectionText );
 
 					}else{
