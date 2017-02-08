@@ -11,7 +11,7 @@ Utils.log('background.js 初始化成功！！！');
 (function(global) {
 	var current = localStorage["__current__"] || 0;
 	var is_image = localStorage["is_image_blur"] || 0;
-
+	var is_notifications = localStorage["is_notifications"] || 0;
 	var contexts = ["page", "frame", "selection", "link", "editable", "image", "video", "audio", "browser_action"];
 	for (var i = 0; i < contexts.length; i++) {
 		//console.log(contexts[i]);
@@ -46,7 +46,9 @@ Utils.log('background.js 初始化成功！！！');
  
 		//chrome.extension.getBackgroundPage().createEmptyTab();
 		//chrome.extension.getBackgroundPage().removeTab();
-		chrome.extension.getBackgroundPage().msgTip();
+		if (is_notifications == '1') {
+			chrome.extension.getBackgroundPage().msgTip();
+		};
 		//chrome.extension.getBackgroundPage().createWindow();
 	});
 

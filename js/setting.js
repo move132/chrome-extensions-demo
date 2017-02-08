@@ -1,7 +1,7 @@
 $(function(){
 	var is_image=localStorage.getItem("is_image_blur");
 	var is_tts=localStorage.getItem("is_tts");
-	
+	var is_notifications=localStorage.getItem("is_notifications");
 
 	$("input[type='checkbox']").each(function(i,e){
 		var type=$(e).attr("name");
@@ -16,6 +16,12 @@ $(function(){
 					$("input[name='automedia']").prop("checked",true);
 				};
 			break;
+			case 'notifications':
+				if (is_notifications && is_notifications==1) {
+					$("input[name='notifications']").prop("checked",true);
+				};
+			break;
+			
 		}
 	});
 
@@ -28,6 +34,9 @@ $(function(){
 			break;
 			case 'automedia':
 				localStorage.setItem("is_tts",ischeck);
+			break;
+			case 'notifications':
+				localStorage.setItem("is_notifications",ischeck);
 			break;
 		}
 	});
