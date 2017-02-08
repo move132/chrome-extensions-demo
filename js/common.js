@@ -144,6 +144,12 @@ $(function(){
 			setTimeout(function(){$("body").removeClass("loading_body");}, 300);
 		});
 	});
+	
+	$(".clear_tts").on("click",function(e){
+		chrome.tts.stop();
+	});
+
+	
 
 	$("body").append("<audio id='jp_audio_0' preload='metadata'  ></audio>");
 	$("body").on("click",".btn-player",function(){

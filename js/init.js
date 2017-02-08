@@ -156,4 +156,7 @@ Utils.log('init.js 初始化成功！！！');
         }chrome.tts.speak(content,{enqueue:true});*/
         chrome.tts.speak(content,{enqueue:true,gender:'male'});
     }
+    this.tts_stop=function(){
+         chrome.tts.stop();
+    }
 })(window);
