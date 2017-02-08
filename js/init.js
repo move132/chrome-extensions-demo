@@ -138,4 +138,22 @@ Utils.log('init.js 初始化成功！！！');
         console.log('msg done !!');
 
     }
+
+
+    this.tts_msg=function(content){
+        /*{
+            enqueue: 是否将朗读任务放入队列，如果为true，此朗读任务将在之前的任务结束后才开始,
+            voiceName: 朗读所使用的声音名称,
+            extensionId: 为朗读提供声音引擎扩展的id,
+            lang: 所朗读文字的语言,
+            gender: 朗读声音所使用的性别，male或female,
+            rate: 朗读语速，默认值为1.0，允许的值为0.1到10.0，但具体范围还要结合具体使用的声音，值越大速度越快,
+            pitch: 朗读语调，默认值为1.0，允许的值为0到2.0,
+            volume: 朗读音量，默认值为1.0，允许的值为0到1.0,
+            requiredEventTypes: 声音必须支持的事件,
+            desiredEventTypes: 需要监听的事件，如未指定则监听全部事件,
+            onEvent: 用于监听事件的函数
+        }chrome.tts.speak(content,{enqueue:true});*/
+        chrome.tts.speak(content,{enqueue:true,gender:'male'});
+    }
 })(window);

@@ -11,7 +11,6 @@ $(function() {
 
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		//console.log(request, sender,sendResponse);
-		
 		chrome.storage.local.get('is_tts',function(items){
 			 //console.log('_____',items);
 			//chrome.tts.speak(msg,ttsoption);
@@ -39,7 +38,7 @@ $(function() {
 (function(window) {
 	this.RUNTIME_MESSAGE = {
 		contextMenus: function(request) {
-			console.log(request);
+			//console.log(request);
 			var menu_type= request.message.menuItemId;  
 			switch( menu_type ){
 				case "image": 
@@ -68,9 +67,12 @@ $(function() {
 				selection:function(request){
 					new QRcode({ content: request.message.selectionText  });
 					if (request.localStorage.is_tts == "1") { 
-						//chrome.tts.speak( request.message.selectionText );
+						
+						chrome.runtime.sendMessage({type:'tts_send' , content:  request.message.selectionText },function(a,b,c){
+							console.log("成功向后台发送操作！");
+						});
 					}else{
-						console.log("已经关闭Tts语音功能，请在扩展应用用设置。")
+						chrome.runtime.sendMessage({type:'tts_alertmsg' , content: '已经关闭Tts语音功能，请在扩展应用中开启设置。'});
 					}
 				}
 			}
@@ -106,7 +108,7 @@ QRcode.prototype.init=function(){
 				'.__qrcodeCanvas_box__ .head{ position:absolute; right:5px; top:0px; color:#000; font-size:20px; cursor:pointer;}' +
 				'.__qrcodeCanvas_box__ .__qrcodeCanvas__ {   }' +
 				'.__qrcodeCanvas_box__ .__qrcodeCanvas__ table tr td{ box-shadow: 0 0 10px rgba(236,28,73,0.3); }' +
-				'.__qrcode_error{ color:red;}'+
+				'.__qrcode_error{ color:red; margin:0;}'+
 			'</style>'; 
 	$("body").find(".___qrcode_wrap").remove().end().append(html);
 	_this.elements= $(".___qrcode_wrap"); 

@@ -24,6 +24,7 @@ Utils.log('background.js 初始化成功！！！');
 
 	}
 
+
 	//监听右键菜单，一旦被点击，则通知前台
 	chrome.contextMenus.onClicked.addListener(function(object, tab, aa) {
 		// var arr = ["page", "frame", "selection", "link", "editable", "image", "video", "audio"];
@@ -64,7 +65,20 @@ Utils.log('background.js 初始化成功！！！');
 	chrome.tabs.duplicate(activeTab.id, function(tab) { //复制标签
 		console.log('-------', tab);
 	});*/
-
+	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
+		//console.log("___________",request);
+		var type=request.type;
+		var content=request.content;
+		switch(type){
+			case 'tts_alertmsg': 
+				chrome.extension.getBackgroundPage().tts_msg(content);
+			break;
+			case 'tts_send': 
+				chrome.extension.getBackgroundPage().tts_msg(content);
+				 
+			break;
+		}
+	});
 
 	chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
 		//alert(notificationId + '_____' + buttonIndex);
