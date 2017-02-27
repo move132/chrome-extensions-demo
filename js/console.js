@@ -40,7 +40,8 @@ $(function() {
 		    'left': 0,
 		    'padding': 0,
 		    'z-index': 999999
-		})
+		});
+		$(".main_header").remove();
 	}
 });
 
