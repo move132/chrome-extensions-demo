@@ -31,13 +31,12 @@ $(function() {
 	if (window.location.hostname === "egghead.io") {
 		$(".lesson-controls-container").append('<a id="a4883534254543aeb0" target="_blank" href=' + $("#wistia_19_source").attr("src") + ' title="" class="custom-btn" data-original-title="下载视频"><i class="fa fa-download"></i> <span class="hidden-xs">下载视频</span></a>');
 	};
-
-	if (window.location.hostname === "quanmin.tv") {
+	if (window.location.hostname.indexOf("quanmin.tv") > 0  ) {
 		$(".p-room_player").css({
 			'position': 'fixed',
 		    'width': '100%',
 		    'height': '100%',
-		    'top:': 0,
+		    'top': 0,
 		    'left': 0,
 		    'padding': 0,
 		    'z-index': 999999
