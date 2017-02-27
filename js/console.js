@@ -34,13 +34,13 @@ $(function() {
 
 	if (window.location.hostname === "quanmin.tv") {
 		$(".p-room_player").css({
-			'position': 'fixed';
-		    'width': '100%';
-		    'height': '100%';
-		    'top:' 0;
-		    'left': 0;
-		    'padding': 0;
-		    'z-index': 9999999;
+			'position': 'fixed',
+		    'width': '100%',
+		    'height': '100%',
+		    'top:': 0,
+		    'left': 0,
+		    'padding': 0,
+		    'z-index': 999999
 		})
 	}
 });
