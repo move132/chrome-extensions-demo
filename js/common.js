@@ -42,13 +42,15 @@ function callback(notificationsID){
 	 setBodyHtml(responseText);
 });*/
 
-fetch('http://www.biuss.com/').then(function(response){
+fetch('https://www.biuss.com/').then(function(response){
 	return response.text();
 }).then(function(responseText){
-    console.log($(responseText).find(".mega-menu .btn-u").html());
-    $(".list").html( $(responseText).find(".mega-menu .btn-u").html().replace(/\[每1小时变更一次密码\]/g,''));
+    console.log($(responseText).find(".intro-how-to .row").html());
+    $(".list").html( $(responseText).find(".intro-how-to .row").html() );
 
-    fetch('http://www.biuss.com/ucenter/free_pwd.php').then(function(response){
+    fetch('https://www.biuss.com/ucenter/free_pwd.php',{
+    	headers:{'cookie':'UM_distinctid=15b9098392280-00f23d411d10e8-5e4f2b18-100200-15b909839237be; PHPSESSID=9b1oh5cmv04q5jb2bec4r8bgl5'}
+    }).then(function(response){
     	return response.text();
     }).then(function(responseText){
         console.log(responseText);
