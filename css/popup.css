@@ -95,6 +95,15 @@ body{
     min-width: 460px;
     font-family: 微软雅黑;
 }
+.tl{
+    text-align: left;
+}
+.tc{
+    text-align: center;
+}
+.tr{
+    text-align: right;
+}
 .fl{
     float: left;
 }
@@ -276,15 +285,46 @@ body{
     word-wrap: normal;
 }
 
-
-.list{
-  margin:50px 0 100px 0;
-}
-.list span{
-
-}
+ 
 
 
 .tts{
     margin:50px 0 100px 0;
+    text-align: center;
+}
+
+.mask_layer{ position:fixed;_position:absolute;top:0;left:0;z-index:100;width:100%;height:100%;background:#000;filter:alpha(opacity=80);opacity:.8}
+
+.qrcode_item{
+    transition:all 0.36s; 
+    cursor:pointer;
+    background: #fff;
+    backface-visibility: hidden;
+}
+
+.qrcode_item.rotate{
+    transform:translate(-50%,-50%) scale(2.4) rotateY(360deg);
+    position: fixed;
+    z-index:101;
+    top:50%;
+    left: 50%;
+}
+ 
+
+.qrcode_item img{
+    width:130px;
+    height: 130px;
+}
+.qrcode_item p{
+    font-weight: bold;
+    padding:10px 0;
+    margin-top: -20px; 
+    font-size: 14px;
+}
+
+.qrcode_item:hover{ 
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+.qrcode_item:hover{ 
+    color:#56b9fe;
 }

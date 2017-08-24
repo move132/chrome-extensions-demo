@@ -42,7 +42,7 @@ function callback(notificationsID){
 	 setBodyHtml(responseText);
 });*/
 
-fetch('https://www.biuss.com/').then(function(response){
+/*fetch('https://www.biuss.com/').then(function(response){
 	return response.text();
 }).then(function(responseText){
     console.log($(responseText).find(".intro-how-to .row").html());
@@ -61,7 +61,7 @@ fetch('https://www.biuss.com/').then(function(response){
 
 }).catch(function(error){
     console.log(error);
-});
+});*/
 
 
 
@@ -167,6 +167,51 @@ $(function(){
 
 		$("#jp_audio_0").attr("src",$(this).attr("sound_url"));
 	});
+	var qrcode_linklist=[
+		{
+			"src":"http://freess.cx/images/servers/jp01.png",
+			"title":"Japan#1"
+		},
+		{
+			"src":"http://freess.cx/images/servers/jp02.png",
+			"title":"Japan#2"
+		},
+		{
+			"src":"http://freess.cx/images/servers/jp03.png",
+			"title":"Japan#3"
+		},
+		{
+			"src":"http://freess.cx/images/servers/us01.png",
+			"title":"America#1"
+		},
+		{
+			"src":"http://freess.cx/images/servers/us02.png",
+			"title":"America#2"
+		},
+		{
+			"src":"http://freess.cx/images/servers/us03.png",
+			"title":"America#3"
+		}
+		
+	];
+	$.each(qrcode_linklist,function(i,val){
+		var str=
+		"<div class='qrcode_item tc fl' style='margin:10px;'>"+
+			"<img src="+qrcode_linklist[i].src+" alt="+qrcode_linklist[i]+" />"+
+			"<p>"+qrcode_linklist[i].title+"</p>"+ 
+		"</div>";
+		$(".list").append(str);
+	});
+
+	$(".qrcode_item").on("click",function(e){
+		if ($(this).hasClass("rotate")) {
+			$(".mask_layer").remove();
+			$(this).removeClass("rotate");
+		}else{
+			$(this).addClass("rotate");
+			$("body").append("<div class='mask_layer'></div>");
+		}
+	})
 });
 
 
