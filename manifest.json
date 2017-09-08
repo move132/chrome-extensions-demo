@@ -5,13 +5,23 @@
     "homepage_url" : "https://github.com/move132/chrome-extensions-demo" ,
     "version": "1.0.1",
     "icons": {
-        "16": "/images/appicon.jpg",
-        "32": "/images/appicon.jpg",
-        "64": "/images/appicon.jpg",
-        "128": "/images/appicon.jpg"
+        "16": "images/appicon-16.png",
+        "48": "images/appicon-48.png",
+        "128": "images/appicon-128.png" 
+    },
+    "externally_connectable": {
+	    // Extension and app IDs. If this field is not specified, no
+	    // extensions or apps can connect.
+	    "ids": [
+	      "pfmbopjmlincmgdeelggpfahbohnhnag"
+	      //"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", 
+	      // Alternatively, to match all extensions and apps, specify only
+	      // "*".
+	      //"*"
+	    ]
     },
     "browser_action": {
-        "default_icon": "/images/appicon.jpg",
+        "default_icon": "images/appicon.jpg",
         "default_title": "content_security_policy",
         "default_popup": "page/popup.html"
     },

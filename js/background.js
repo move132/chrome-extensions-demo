@@ -23,7 +23,20 @@ Utils.log('background.js 初始化成功！！！');
 		});
 
 	}
-
+ 	
+	chrome.tts.getVoices(function(voices) {
+		for (var i = 0; i < voices.length; i++) {
+			console.log('Voice ' + i + ':');
+			console.log('  name: ' + voices[i].voiceName);
+			console.log('  lang: ' + voices[i].lang);
+			console.log('  gender: ' + voices[i].gender);
+			console.log('  extension id: ' + voices[i].extensionId);
+			console.log('  event types: ' + voices[i].eventTypes);
+		}
+	});
+ 	chrome.browserAction.setIcon({
+        'path': chrome.runtime.getURL('../images/appicon-48.png')
+    }); 
 
 	//监听右键菜单，一旦被点击，则通知前台
 	chrome.contextMenus.onClicked.addListener(function(object, tab, aa) {
@@ -73,6 +86,7 @@ Utils.log('background.js 初始化成功！！！');
 		var content=request.content;
 		switch(type){
 			case 'tts_alertmsg': 
+				chrome.extension.getBackgroundPage().tts_stop();
 				chrome.extension.getBackgroundPage().tts_msg(content);
 			break;
 			case 'tts_send': 

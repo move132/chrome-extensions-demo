@@ -28,6 +28,49 @@ $(function() {
 		};
 	});
 
+
+	/*var port = chrome.extension.connect();
+	console.log(port)
+
+	
+	document.getElementById('app').addEventListener('myCustomEvent', function(e) {
+		var a=e;
+	  var eventData = document.getElementById('app').innerText;
+	  	debugger;
+	  port.postMessage({message: "myCustomEvent", values: eventData});
+	});*/
+	
+	var port = chrome.extension.connect();
+	window.addEventListener("message", function(event) {  
+	  	// We only accept messages from ourselves
+	  	if (event.source != window)
+	    	return;
+
+	  	if (event.data.type && (event.data.type == "FROM_PAGE")) {
+	    	console.log("Content script received: " + event.data.text);
+	    	//port.postMessage(event.data.text);
+	    	chrome.runtime.sendMessage({type:'tts_alertmsg' , content: event.data.text });
+	  	}
+	}, false);
+
+
+
+
+
+	function createEle(){
+		var div= document.createElement("div");
+		div.className="_____div_tts_______";
+
+		div.style.cssText="width:20px; height:20px; background:red; z-index:999;top:200px;left:200px;position:absolute; display:none;";
+
+		document.body.appendChild(div);
+	}
+	createEle();
+
+	$("._____div_tts_______").on("click",function(e){ 
+		chrome.runtime.sendMessage({type:'tts_alertmsg' , content: $(this).text() });
+	})
+
 	if (window.location.hostname === "egghead.io") {
 		$(".lesson-controls-container").append('<a id="a4883534254543aeb0" target="_blank" href=' + $("#wistia_19_source").attr("src") + ' title="" class="custom-btn" data-original-title="下载视频"><i class="fa fa-download"></i> <span class="hidden-xs">下载视频</span></a>');
 	};

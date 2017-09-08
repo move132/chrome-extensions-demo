@@ -154,7 +154,8 @@ Utils.log('init.js 初始化成功！！！');
             desiredEventTypes: 需要监听的事件，如未指定则监听全部事件,
             onEvent: 用于监听事件的函数
         }chrome.tts.speak(content,{enqueue:true});*/
-        chrome.tts.speak(content,{enqueue:true,gender:'male'});
+        var voiceName=localStorage.getItem("voiceName");
+        chrome.tts.speak(content,{enqueue:false,gender:'male',pitch:0, voiceName:voiceName});
     }
     this.tts_stop=function(){
          chrome.tts.stop();

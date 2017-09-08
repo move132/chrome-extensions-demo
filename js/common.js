@@ -151,6 +151,27 @@ $(function(){
 		chrome.tts.stop();
 	});
 
+	chrome.tts.getVoices(function(voices) {
+		var voicehtml="<select class='select_voice'>";
+		for (var i = 0; i < voices.length; i++) {
+			//console.log('Voice ' + i + ':');
+			//console.log('  name: ' + voices[i].voiceName);
+			/*console.log('  lang: ' + voices[i].lang);
+			console.log('  gender: ' + voices[i].gender);
+			console.log('  extension id: ' + voices[i].extensionId);
+			console.log('  event types: ' + voices[i].eventTypes);*/
+			voicehtml+="<option value='"+voices[i].voiceName+"'>"+voices[i].voiceName+"</option>";
+		}
+		voicehtml+="</select>";
+		$(".voiceNamelist").html(voicehtml);
+
+		$(".select_voice").on("change",function(e){  
+			localStorage.setItem("voiceName",$(this).val());
+		});
+
+	});
+
+	
 	
 
 	$("body").append("<audio id='jp_audio_0' preload='metadata'  ></audio>");
