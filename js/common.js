@@ -155,12 +155,17 @@ $(function(){
 		var voicehtml="<select class='select_voice'>";
 		for (var i = 0; i < voices.length; i++) {
 			//console.log('Voice ' + i + ':');
-			//console.log('  name: ' + voices[i].voiceName);
+			//console.log('  name: ' + voices[i].);
 			/*console.log('  lang: ' + voices[i].lang);
 			console.log('  gender: ' + voices[i].gender);
 			console.log('  extension id: ' + voices[i].extensionId);
 			console.log('  event types: ' + voices[i].eventTypes);*/
-			voicehtml+="<option value='"+voices[i].voiceName+"'>"+voices[i].voiceName+"</option>";
+			if (localStorage.getItem("voiceName")==voices[i].voiceName) {
+				voicehtml+="<option value='"+voices[i].voiceName+"' selected='selected'>"+voices[i].voiceName+"</option>";	
+			}else{
+				console.log('  extension id: ' + voices[i].voiceName);
+				voicehtml+="<option value='"+voices[i].voiceName+"'>"+voices[i].voiceName+"</option>";
+			}
 		}
 		voicehtml+="</select>";
 		$(".voiceNamelist").html(voicehtml);
