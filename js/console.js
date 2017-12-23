@@ -65,7 +65,7 @@ $(function() {
 
 		document.body.appendChild(div);
 	}
-	createEle();
+	//createEle();
 
 	$("._____div_tts_______").on("click",function(e){ 
 		chrome.runtime.sendMessage({type:'tts_alertmsg' , content: $(this).text() });
