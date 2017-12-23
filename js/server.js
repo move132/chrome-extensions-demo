@@ -77,7 +77,7 @@ var _methods = {
                 " ╱◥██◣''o',''',,',.''.'',,',.\n" +
                 "｜田｜田田│ '',,',.',''',,',.''\n" +
                 "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬" + '\n------------------------------------')
-            console.log('\x1B[35m' + 'MAKE：o︻そ╆OVE▅▅▅▆▇◤\nGITHUB：https://github.com/move132' + '\x1B[39m')
+            console.log('\x1B[35m' + 'MAKE：o︻そ╆OVE▅▅▅▆▇◤\nBLOG：http://blog.csdn.net/mcky_love\nGITHUB：https://github.com/gs3170981' + '\x1B[39m')
         }
     }
 }
