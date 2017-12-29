@@ -61,13 +61,20 @@ $(function() {
 		var div= document.createElement("div");
 		div.className="_____div_tts_______";
 
-		div.style.cssText="width:20px; height:20px; background:red; z-index:999;top:200px;left:200px;position:absolute; display:none;";
+		div.style.cssText="width:20px; height:20px;z-index:999999;top:0;left:0;position:fixed;box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABuElEQVRIS5WX247EIAxD6f9/dFdUk8oc7JTty4woJM7FJr3GGPcwz33f47quwd+5da7Np967/7Vv7nHPXL3LUG2gQ66XIzVOMMlGnX0dE1lFSrS6nrJRtpyNWmsdM4Uaef13kbIcCv7Y8Un9upqnTD4R/6e5NL0KyjViKtdzbussQeHQKkh2taZf39muLscpJdrxrmmYAQJL9X4jVseJXkoj8lTrnJigex7HSSiYOvLWCQhTrLYXe9VcHT+7aJyIWKn6Kd1LSTp2AE546biq56h+S1dr87CedJ5o5c45sdkcn/CUkaRaMwsL71VAHHVSCtnVqa7J+aJcdHxSb6pTuhgIbKETG8DxdjPwu2/JfatWv/v9sas8XmqAIUDfKaBTqlET2kFAUTtlIwsccAfyWUvNlQ4w8uTM7dNSLoMAm+krvTEaU3dmzE4gJ4Lf0Yw8d6Ky1fhr9iKoNH24rtaMfg4CjiZugtxSqdRB6ufedvRJDcKBoBOaBOhzvO0idmKS+oPrn45p3NW4+6LQS2fJVH1JnMxcFBQaTVOlpWn3CXMijc6o0/xNE7q52vGvOOrGV/eB5mo+1/4AVymo+GuFkzwAAAAASUVORK5CYII=); ";
 
 		document.body.appendChild(div);
+
+		console.log(chrome.storage.local.get("name",function(e){
+			console.log(this)
+		}))
 	}
-	//createEle();
+
+	createEle();
 
 	$("._____div_tts_______").on("click",function(e){ 
+		new QRcode({ content: window.location.href  });
+		$(this).hide();
 		chrome.runtime.sendMessage({type:'tts_alertmsg' , content: $(this).text() });
 	})
 
