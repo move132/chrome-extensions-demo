@@ -65,9 +65,9 @@ $(function() {
 
 		document.body.appendChild(div);
 
-		console.log(chrome.storage.local.get("name",function(e){
+		/*console.log(chrome.storage.local.get("name",function(e){
 			console.log(this)
-		}))
+		}))*/
 	}
 
 	createEle();
