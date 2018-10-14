@@ -220,14 +220,14 @@ $(function(){
 		}
 		
 	];
-	$.each(qrcode_linklist,function(i,val){
+	/* $.each(qrcode_linklist,function(i,val){
 		var str=
 		"<div class='qrcode_item tc fl' style='margin:10px;'>"+
 			"<img src="+qrcode_linklist[i].src+" alt="+qrcode_linklist[i]+" />"+
 			"<p>"+qrcode_linklist[i].title+"</p>"+ 
 		"</div>";
 		$(".list").append(str);
-	});
+	}); */
 
 	$(".qrcode_item").on("click",function(e){
 		if ($(this).hasClass("rotate")) {
